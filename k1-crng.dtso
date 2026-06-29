@@ -1,0 +1,18 @@
+/dts-v1/;
+/plugin/;
+
+/ {
+        fragment@0 {
+                target-path = "/soc";
+
+                __overlay__ {
+                        rng@f0703800 {
+                                compatible = "spacemit,k1-crng";
+                                reg = <0x0 0xf0703800 0x0 0x100>;
+				clocks = <0x0d 20>;
+				resets = <0x0d 14>;
+                                status = "okay";
+                        };
+                };
+        };
+};
